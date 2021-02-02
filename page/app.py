@@ -1,3 +1,4 @@
+import yaml
 from appium import webdriver
 
 from page.base_page import BasePage
@@ -10,7 +11,8 @@ class App(BasePage):
 
     def start(self):
             if self._driver is None:
-                caps = {'platformName': 'Android', 'platformVersion': '6.0.1', 'deviceName': 'emulator-5554',
+                caps = {'platformName': 'Android', 'platformVersion': '6.0.1',
+                        'deviceName': yaml.safe_load(open("../page/configuration.yml"))["caps"]["deviceName"],
                         'appPackage': self._package, 'appActivity': self._activity,
                         'noReset': 'true', 'unicodeKeyBoard': 'true', 'resetKeyBoard': 'true'}
                 # 初始化driver
