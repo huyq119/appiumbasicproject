@@ -12,3 +12,7 @@ class TestMain():
         # app.start().main().goto_search()
         print(value1)
         print(value2)
+
+    def test_windows(self):
+        app = App()
+        app.start().main().goto_windows()

@@ -18,7 +18,7 @@ class App(BasePage):
             else:
                 self._driver.start_activity(self._package, self._activity)
 
-            self._driver.implicitly_wait(5)
+            self._driver.implicitly_wait(10)
             return self
 
     def main(self) -> Main:
